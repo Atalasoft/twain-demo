@@ -48,7 +48,8 @@
     <FxCopTargets>$(SolutionDir)..\..\Build\build.fxcop.Targets</FxCopTargets>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
-    <NuGetPackageImportStamp>987536cb</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -74,12 +75,12 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Atalasoft.DotTwain">
-      <HintPath>..\packages\Atalasoft.DotTwain.x86.10.6.1.85353\lib\net40\x86\Atalasoft.DotTwain.dll</HintPath>
+    <Reference Include="Atalasoft.DotTwain, Version=10.7.0.2483, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.DotTwain.x86.10.7.0.02483\lib\net40\Atalasoft.DotTwain.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Atalasoft.Shared">
-      <HintPath>..\packages\Atalasoft.Shared.10.6.1.85353\lib\net40\x86\Atalasoft.Shared.dll</HintPath>
+    <Reference Include="Atalasoft.Shared, Version=10.7.0.2483, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Atalasoft.Shared.10.7.0.02483\lib\net40\Atalasoft.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System">
@@ -180,11 +181,11 @@
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(AppConfigFile)" DestinationFiles="$(TargetPath).config" SkipUnchangedFiles="false" />
   </Target>
+  <Import Project="..\packages\Atalasoft.DotTwain.x86.10.7.0.02483\build\Atalasoft.DotTwain.x86.targets" Condition="Exists('..\packages\Atalasoft.DotTwain.x86.10.7.0.02483\build\Atalasoft.DotTwain.x86.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Atalasoft.DotTwain.x86.10.6.1.85353\build\Atalasoft.DotTwain.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.DotTwain.x86.10.6.1.85353\build\Atalasoft.DotTwain.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.DotTwain.x86.10.7.0.02483\build\Atalasoft.DotTwain.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.DotTwain.x86.10.7.0.02483\build\Atalasoft.DotTwain.x86.targets'))" />
   </Target>
-  <Import Project="..\packages\Atalasoft.DotTwain.x86.10.6.1.85353\build\Atalasoft.DotTwain.x86.targets" Condition="Exists('..\packages\Atalasoft.DotTwain.x86.10.6.1.85353\build\Atalasoft.DotTwain.x86.targets')" />
 </Project>
