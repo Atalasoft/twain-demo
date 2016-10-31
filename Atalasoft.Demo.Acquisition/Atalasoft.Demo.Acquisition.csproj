@@ -75,12 +75,12 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Atalasoft.DotTwain, Version=10.7.0.2483, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
-      <HintPath>..\packages\Atalasoft.DotTwain.x86.10.7.0.02483\lib\net40\Atalasoft.DotTwain.dll</HintPath>
+    <Reference Include="Atalasoft.DotTwain, Version=10.7.0.2694, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86">
+      <HintPath>..\packages\Atalasoft.DotTwain.x86.10.7.0.22694\lib\net40\Atalasoft.DotTwain.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Atalasoft.Shared, Version=10.7.0.2483, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=MSIL">
-      <HintPath>..\packages\Atalasoft.Shared.10.7.0.02483\lib\net40\Atalasoft.Shared.dll</HintPath>
+    <Reference Include="Atalasoft.Shared, Version=10.7.0.2694, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Atalasoft.Shared.10.7.0.22694\lib\net40\Atalasoft.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System">
@@ -181,11 +181,11 @@
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(AppConfigFile)" DestinationFiles="$(TargetPath).config" SkipUnchangedFiles="false" />
   </Target>
-  <Import Project="..\packages\Atalasoft.DotTwain.x86.10.7.0.02483\build\Atalasoft.DotTwain.x86.targets" Condition="Exists('..\packages\Atalasoft.DotTwain.x86.10.7.0.02483\build\Atalasoft.DotTwain.x86.targets')" />
+  <Import Project="..\packages\Atalasoft.DotTwain.x86.10.7.0.22694\build\Atalasoft.DotTwain.x86.targets" Condition="Exists('..\packages\Atalasoft.DotTwain.x86.10.7.0.22694\build\Atalasoft.DotTwain.x86.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Atalasoft.DotTwain.x86.10.7.0.02483\build\Atalasoft.DotTwain.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.DotTwain.x86.10.7.0.02483\build\Atalasoft.DotTwain.x86.targets'))" />
+    <Error Condition="!Exists('..\packages\Atalasoft.DotTwain.x86.10.7.0.22694\build\Atalasoft.DotTwain.x86.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Atalasoft.DotTwain.x86.10.7.0.22694\build\Atalasoft.DotTwain.x86.targets'))" />
   </Target>
 </Project>
